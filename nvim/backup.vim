@@ -24,4 +24,4 @@ nnoremap <space> <nop>
 let mapleader = " "
 
 inoremap jk <esc>l
-nnoremap <space> ZZ
+nnoremap <leader><space> ZZ
