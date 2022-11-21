@@ -22,7 +22,7 @@ alias ev="nvim ~/.config/nvim/init.lua"
 alias sv="source ~/.config/nvim/init.lua"
 
 # git aliases
-alias gss="git status"
+alias gss="git status -s"
 alias gpl="git pull"
 alias gad="git add ."
 alias gps="git push origin main"
