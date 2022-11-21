@@ -74,6 +74,12 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["impatient.nvim"] = {
+    config = { "require('impatient')" },
+    loaded = true,
+    path = "/Users/archsinit/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/Users/archsinit/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -87,6 +93,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: impatient.nvim
+time([[Config for impatient.nvim]], true)
+require('impatient')
+time([[Config for impatient.nvim]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

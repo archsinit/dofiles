@@ -7,8 +7,15 @@ local keymap = vim.keymap
 -- Set global mapleader
 vim.g.mapleader = " "
 
+--------------------------------------------------------------------------------
+-- Neovim Mapping
+--------------------------------------------------------------------------------
+
 -- Escape from insert mode
 keymap.set("i", "jk", "<ESC>")
+
+-- Clear search highlighting with <leader> and c
+keymap.set('n', "<leader>c", ":nohl<CR>")
 
 -- Save current buffer
 keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
@@ -17,7 +24,7 @@ keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save bu
 keymap.set("n", "<leader>q", "<cmd>x<cr>", { silent = true, desc = "quit current window" })
 
 -- Edit and reload nvim config file quickly
-keymap.set("n", "<leader>ev", "<cmd>tabnew $MYVIMRC <bar> tcd %:h<cr>", {
+keymap.set("n", "<leader>ev", "<cmd>tabnew ~/.config/nvim/lua/mappings.lua <bar> tcd %:h<cr>", {
   silent = true,
   desc = "open init.lua",
 })
@@ -36,7 +43,11 @@ end, {
 -- Always use very magic mode for searching
 keymap.set("n", "/", [[/\v]])
 
-
 --------------------------------------------------------------------------------
 -- Ledger File
 --------------------------------------------------------------------------------
+keymap.set("n", "<leader>la", "<cmd>LedgerAlign<cr>", 
+    { silent = true, desc = "align line" })
+
+keymap.set("n", "<leader>lb", "<cmd>Ledger bal -C ^Asset ^Liab<cr>", 
+    { silent = true, desc = "balance sheet" })
