@@ -19,7 +19,8 @@ end
 
 -- List configuration files to source
 local conf_files = {
-    "options.lua", --general neovim settings
+    "options.lua", -- general neovim settings
+    "plugins.lua", -- packer.nvim, package manager
     "mappings.lua", -- user keymapping
 }
 
