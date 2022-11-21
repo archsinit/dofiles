@@ -78,6 +78,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/archsinit/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["vim-ledger"] = {
+    loaded = true,
+    path = "/Users/archsinit/.local/share/nvim/site/pack/packer/start/vim-ledger",
+    url = "https://github.com/ledger/vim-ledger"
   }
 }
 
