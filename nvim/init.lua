@@ -1,48 +1,31 @@
--- This is my personal nvim configuration based on https://jdhao.github.io.
--- 
--- Author: archsinit
--- Email: archsinit@disroot.org
--- Last Updated: November 20, 2022
-
 --------------------------------------------------------------------------------
--- GLOBAL SETTINGS
-local opt = vim.opt
-
--- Always use clipboard for all delete, yank, change, put operations
-opt.clipboard = 'unnamedplus'
-
+-- NEOVIM CONFIGURATION FILE - init.lua - by archsinit
 --------------------------------------------------------------------------------
--- KEYMAPPING
-local keymap = vim.keymap
 
--- Set global mapleader
-vim.g.mapleader = " "
+local api = vim.api
+local utils = require("utils")
 
--- Escape from insert mode
-keymap.set("i", "jk", "<ESC>")
+-- Verify that the latest stable version of nvim is being used
+local expected_ver = "0.8.1"
+local nvim_ver = utils.get_nvim_version()
 
--- Save current buffer
-keymap.set("n", "<leader>w", "<cmd>update<cr>", { silent = true, desc = "save buffer" })
+if nvim_ver ~= expected_ver then
+    local msg = string.format(
+        "Unsupported nvim version: expect %s, but got %s instead!", 
+        expected_ver, nvim_ver)
+    api.nvim_err_writeln(msg)
+    return
+end
 
--- Quit current buffer
-keymap.set("n", "<leader>q", "<cmd>x<cr>", { silent = true, desc = "quit current window" })
+-- List configuration files to source
+local conf_files = {
+    "options.lua", --general neovim settings
+    "mappings.lua", -- user keymapping
+}
 
--- Edit and reload nvim config file quickly
-keymap.set("n", "<leader>ev", "<cmd>tabnew $MYVIMRC <bar> tcd %:h<cr>", {
-  silent = true,
-  desc = "open init.lua",
-})
-
-keymap.set("n", "<leader>sv", function()
-  vim.cmd([[
-      update $MYVIMRC
-      source $MYVIMRC
-    ]])
-  vim.notify("Nvim config successfully reloaded!", vim.log.levels.INFO, { title = "nvim-config" })
-end, {
-  silent = true,
-  desc = "reload init.lua",
-})
-
--- Always use very magic mode for searching
-keymap.set("n", "/", [[/\v]])
+-- Source configuration files
+for _, name in ipairs(conf_files) do 
+    local path = string.format("%s/lua/%s", vim.fn.stdpath("config"), name)
+    local source_cmd = "source " .. path
+    vim.cmd(source_cmd)
+end
