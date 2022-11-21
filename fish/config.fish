@@ -17,8 +17,8 @@ alias lta="exa --sort Name --long --tree --all --recurse --level=3"
 # default text editor: neovim
 alias v="nvim"
 alias vi="nvim"
-alias ev="nvim $MYVIMRC"
-alias sv="source $MYVIMRC"
+alias ev="nvim ~/.config/nvim/init.lua"
+alias sv="source ~/.config/nvim/init.lua"
 
 # git aliases
 alias gss="git status"
