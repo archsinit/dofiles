@@ -12,7 +12,7 @@ window:
     x: 15
     y: 15
   dynamic_padding: true
-  decorations: full
+  decorations: Full
   opacity: 1.0
   startup_mode: windowed
 
@@ -21,7 +21,7 @@ scrolling:
   multiplier: 3
 
 font:
-  size: 10.0
+  size: 8.5
   offset:
     x: 0
     y: 1
@@ -45,7 +45,7 @@ cursor:
     blinking: on
 
 shell:
-  program: /usr/local/bin/fish
+  program: /bin/fish
 
 key_bindings:
   - { key: Equals,        mods: Control,        action: IncreaseFontSize      }
