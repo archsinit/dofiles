@@ -12,7 +12,7 @@ window:
     x: 15
     y: 15
   dynamic_padding: true
-  decorations: buttonless
+  decorations: full
   opacity: 1.0
   startup_mode: windowed
 
@@ -21,18 +21,6 @@ scrolling:
   multiplier: 3
 
 font:
-  normal:
-    family: Menlo
-    style: Regular
-  bold: 
-    family: Menlo
-    style: Bold
-  italic:
-    family: Menlo
-    style: Italic
-  bold_italic:
-    family: Menlo
-    style: Bold Italic
   size: 10.0
   offset:
     x: 0

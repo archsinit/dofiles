@@ -52,4 +52,4 @@ schemes:
       cyan:    '#46d9ff'
       white:   '#dfdfdf'
 
-colors: *gruvbox_dark
+colors: *doom_one
