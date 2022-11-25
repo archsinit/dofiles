@@ -3,11 +3,11 @@ import:
 
 window:
   dimensions:
-    columns: 120
-    lines: 35
+    columns: 130
+    lines: 70
   position:
-    x: 20
-    y: 60
+    x: 200
+    y: 110
   padding:
     x: 15
     y: 15

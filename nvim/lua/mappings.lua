@@ -43,6 +43,20 @@ end, {
 -- Always use very magic mode for searching
 keymap.set("n", "/", [[/\v]])
 
+-- Restructure remainder of paragraph to fit into 80 characters
+keymap.set("n", "<leader>g", "gq}")
+
+-- Center the page 
+keymap.set("n", "<leader><leader>", "zz")
+
+-- Enter date stamp
+keymap.set("i", "@@", '<c-r>=strftime("%Y-%m-%d")<cr>', 
+    { silent = true, desc = "enter date" })
+
+-- Switch to next tab
+keymap.set("n", "<leader>]", "gt")
+keymap.set("n", "<leader>[", "gT")
+
 --------------------------------------------------------------------------------
 -- Ledger File
 --------------------------------------------------------------------------------
@@ -51,3 +65,6 @@ keymap.set("n", "<leader>la", "<cmd>LedgerAlign<cr>",
 
 keymap.set("n", "<leader>lb", "<cmd>Ledger bal -C ^Asset ^Liab<cr>", 
     { silent = true, desc = "balance sheet" })
+
+keymap.set("n", "<leader>lp", '<cmd>Ledger bal -b "last month" -CV ^Exp<cr>',
+    { silent = true, desc = "p&l last month" })
